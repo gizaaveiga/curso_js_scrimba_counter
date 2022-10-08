@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="index.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passenger Counter</title>
+</head>
+<body>
+
+    <div class="conteiner">
+    <h1>People entered:</h1>
+    <h2 id="count-el">0</h2>
+    <button id="increment-btn" onclick="increment()">Increment</button>
+    <button id="save-btn" onclick="save()">save</button>
+    <p id="save-el"> Previous entires: </p>
+    </div>  
+    
+    <script>
+        let countEl = document.getElementById('count-el')
+        let count = 0
+
+        function increment(){
+            count = count + 1
+            countEl.innerText = count    
+        }
+
+        let saveEl = document.getElementById('save-el')
+        function save(){
+            let countString = count + ' - '
+            saveEl.textContent += countString
+            countEl.textContent = 0 // reseta o countEl
+            count = 0 // reseta o count
+        }
+         
+    </script>
+</body>
+</html>
